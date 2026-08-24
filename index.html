@@ -6,6 +6,21 @@
   <title>Three of Us ♡</title>
 
   <style>
+#musicButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  border: none;
+  background: #f8dce8;
+  color: #6b4555;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  font-size: 25px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
     * {
       box-sizing: border-box;
       margin: 0;
@@ -143,6 +158,17 @@
 </head>
 
 <body>
+
+<audio id="bgMusic" src="song.mp3"></audio>
+
+<button id="musicButton"
+onclick="playSong()">🎶</button>
+
+<script>
+function playSong() {
+  document.getElementById("bgMusic").play();
+}
+</script>
 
   <!-- OPENING -->
   <section class="hero">
