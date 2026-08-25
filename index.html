@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three of Us ♡</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, serif;
+  background: #fff8f5;
+  color: #4a3942;
+  text-align: center;
+}
+
+.screen {
+  min-height: 100vh;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background: linear-gradient(#fff3f0, #fceff5);
+  animation: fadeIn 0.8s ease;
+}
+
+.screen.active {
+  display: flex;
+}
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 18px;
+  color: #6b4555;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #6b4555;
+}
+
+p {
+  font-size: 18px;
+  max-width: 650px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+button {
+  border: none;
+  background: #f8dce8;
+  color: #6b4555;
+  padding: 15px 28px;
+  border-radius: 30px;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  margin-top: 15px;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.icon {
+  font-size: 60px;
+  margin-bottom: 25px;
+}
+
+.photo {
+  width: 85%;
+  max-width: 450px;
+  border-radius: 25px;
+  margin: 20px auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1000px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 25px;
+  width: 280px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.small {
+  font-style: italic;
+  color: #9a7181;
+}
+
+.quote {
+  font-size: 23px;
+  font-style: italic;
+}
+
+#musicButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  border: none;
+  background: #f8dce8;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  font-size: 24px;
+  padding: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" src="threeofus.mp3"></audio>
+
+<button id="musicButton" onclick="toggleMusic()">🎶</button>
+
+
+<!-- SCREEN 1 -->
+<div id="screen1" class="screen active">
+
+  <div class="icon">🎶</div>
+
+  <h1>Heyyy... Three of Us ♡</h1>
+
+  <p>
+    Something special has been waiting for you...
+  </p>
+
+  <button onclick="nextScreen(2)">
+    Open Your Surprise 🎁
+  </button>
+
+</div>
+
+
+<!-- SCREEN 2 -->
+<div id="screen2" class="screen">
+
+  <div class="icon">🎀</div>
+
+  <h2>Just a little something...</h2>
+
+  <p>
+    Made with four years of friendship,
+    countless memories, silly moments,
+    secrets and lots of love. 🤍
+  </p>
+
+  <button onclick="nextScreen(3)">
+    Continue ♡
+  </button>
+
+</div>
+
+
+<!-- SCREEN 3 -->
+<div id="screen3" class="screen">
+
+  <div class="icon">🫶🏻</div>
+
+  <h2>It was never just friendship...</h2>
+
+  <p>
+    Some people enter our lives quietly,
+    and somehow become a part of our story.
+  </p>
+
+  <p>
+    That is exactly what happened with us.
+  </p>
+
+  <button onclick="nextScreen(4)">
+    There's more... ✨
+  </button>
+
+</div>
+
+
+<!-- SCREEN 4 -->
+<div id="screen4" class="screen">
+
+  <h2>Where It All Began 🤍</h2>
+
+  <p>
+    The three of us first met at
+    ICC Public English Medium School.
+  </p>
+
+  <p>
+    Slowly, we became the kind of friends
+    who could share everything —
+    our little secrets, happiness,
+    problems and all the random moments.
+  </p>
+
+  <button onclick="nextScreen(5)">
+    One more thing... 💌
+  </button>
+
+</div>
+
+
+<!-- SCREEN 5 -->
+<div id="screen5" class="screen">
+
+  <div class="icon">♟️</div>
+
+  <h2>And then... we became THREE</h2>
+
+  <p>
+    A chess championship brought Isha and Minsha closer.
+  </p>
+
+  <p>
+    Little moments brought Isha and Nashwa closer.
+  </p>
+
+  <p>
+    And somewhere between those bus rides,
+    Nashwa and Minsha became closer too.
+  </p>
+
+  <p class="quote">
+    And somehow, all those little connections became
+    <strong>Three of Us.</strong>
+  </p>
+
+  <button onclick="nextScreen(6)">
+    Show me our memories 📸
+  </button>
+
+</div>
+
+
+<!-- SCREEN 6 -->
+<div id="screen6" class="screen">
+
+  <h2>Our Little Memories 📸</h2>
+
+  <img src="three-of-us.jpg" class="photo" alt="Three of Us">
+
+  <p>
+    Three of us. One picture. A thousand memories. 🤍
+  </p>
+
+  <button onclick="nextScreen(7)">
+    Another memory ♡
+  </button>
+
+</div>
+
+
+<!-- SCREEN 7 -->
+<div id="screen7" class="screen">
+
+  <img src="linu-nishu.jpeg" class="photo" alt="Nishu and Linu">
+
+  <p>
+    Some bonds have their own little names. 🤍
+  </p>
+
+  <button onclick="nextScreen(8)">
+    And another... 🥹
+  </button>
+
+</div>
+
+
+<!-- SCREEN 8 -->
+<div id="screen8" class="screen">
+
+  <img src="first-year.jpeg" class="photo" alt="Three of Us first year">
+
+  <p>
+    We didn't know how many memories were waiting
+    for us when this picture was taken.
+  </p>
+
+  <button onclick="nextScreen(9)">
+    Meet the three ♡
+  </button>
+
+</div>
+
+
+<!-- SCREEN 9 -->
+<div id="screen9" class="screen">
+
+  <h2>Meet The Three ♡</h2>
+
+  <div class="card-container">
+
+    <div class="card">
+      <h3>Isha</h3>
+      <img src="isha.jpeg" class="photo" alt="Isha">
+      <p class="small">
+        ishah · Eechu · Eecha · Milummah
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Minsha</h3>
+      <img src="minsha.jpeg" class="photo" alt="Minsha">
+      <p class="small">
+        Meechu · Meesha Madhavan · Marvelous Minsha · MBTH
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Nashwa</h3>
+      <img src="nashwa.jpeg" class="photo" alt="Nashwa">
+      <p class="small">
+        Neechu · Nahwa · NMZL · Bulbul
+      </p>
+    </div>
+
+  </div>
+
+  <button onclick="nextScreen(10)">
+    One last surprise... 💗
+  </button>
+
+</div>
+
+
+<!-- SCREEN 10 -->
+<div id="screen10" class="screen">
+
+  <div class="icon">🤍</div>
+
+  <h2>What Makes Us Different</h2>
+
+  <p>
+    There has never been jealousy between us.
+    No comparison. No envy.
+  </p>
+
+  <p>
+    When one of us gets something good,
+    the other two are genuinely happy for her.
+  </p>
+
+  <p class="quote">
+    “One person's happiness becomes all three of ours.”
+  </p>
+
+  <button onclick="nextScreen(11)">
+    Read the last part 💌
+  </button>
+
+</div>
+
+
+<!-- FINAL SCREEN -->
+<div id="screen11" class="screen">
+
+  <div class="icon">🫶🏻</div>
+
+  <h2>To My Two People 🤍</h2>
+
+  <p>
+    Four years of friendship, countless memories,
+    endless secrets, silly moments, difficult days,
+    and so many reasons to be grateful for each other.
+  </p>
+
+  <p>
+    No matter how many people come and go,
+    no matter how much life changes,
+    I hope it will always be the three of us
+    standing by each other, choosing each other,
+    and holding on to what we have.
+  </p>
+
+  <p class="quote">
+    Isha · Nashwa · Minsha<br>
+    <strong>Three of Us, always. ♡</strong>
+  </p>
+
+</div>
+
+
+<script>
+
+function nextScreen(number) {
+
+  document.querySelectorAll(".screen").forEach(function(screen) {
+    screen.classList.remove("active");
+  });
+
+  document.getElementById("screen" + number).classList.add("active");
+
+  if (number === 2) {
+    document.getElementById("bgMusic").play();
+  }
+
+  window.scrollTo(0, 0);
+}
+
+
+function toggleMusic() {
+
+  const music = document.getElementById("bgMusic");
+
+  if (music.paused) {
+    music.play();
+  } else {
+    music.pause();
+  }
+
+}
+
+</script>
+
+</body>
+</html>
